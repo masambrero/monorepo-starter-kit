@@ -1,0 +1,15 @@
+{
+  "extends": "tsconfig/react-app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "emitDeclarationOnly": false,
+    "moduleResolution": "bundler",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

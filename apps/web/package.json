@@ -1,0 +1,53 @@
+{
+  "name": "@monorepo-starter/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
+    "dev": "next dev --turbo",
+    "build": "next build && mkdir -p .next/standalone/apps/constructor/.next/static && cp -r .next/static .next/standalone/apps/constructor/.next",
+    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --quiet --fix || true",
+    "prepublishOnly": "npm run build",
+    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js ./src",
+    "test:watch": "jest --watchAll ./src"
+  },
+  "imports": {
+    "#*": [
+      "./src/*.ts",
+      "./src/*.tsx",
+      "./src/*.d.ts",
+      "./src/*/index.ts",
+      "./src/*/index.tsx",
+      "./src/index.d.ts",
+      "./src/*"
+    ]
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "dependencies": {
+    "@monorepo-starter/common": "workspace:*",
+    "@monorepo-starter/headless-ui": "workspace:*",
+    "@next/bundle-analyzer": "^14.2.5",
+    "@tanstack/react-query": "^5.51.1",
+    "@tanstack/react-query-devtools": "^5.29.2",
+    "axios": "^1.7.2",
+    "clsx": "^2.1.1",
+    "next": "^14.2.5",
+    "normalize.css": "^8.0.1",
+    "qs": "^6.11.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.33.4",
+    "typescript-cookie": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/qs": "^6.9.11",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^8.57.0",
+    "eslint-config-base": "0.0.0",
+    "postcss": "^8.4.30",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.5.3"
+  }
+}

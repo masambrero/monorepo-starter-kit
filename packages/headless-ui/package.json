@@ -1,0 +1,53 @@
+{
+  "name": "@monorepo-starter/headless-ui",
+  "version": "0.0.1",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    },
+    "./dist/": "./dist/"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --quiet --fix || true",
+    "prepublishOnly": "npm run build"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "dependencies": {
+    "@radix-ui/react-form": "^0.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
+    "clsx": "^2.1.1",
+    "qs": "^6.11.2"
+  },
+  "peerDependencies": {
+    "@monorepo-starter/common": "workspace:*",
+    "@tanstack/react-query": "^5.51.1",
+    "axios": "^1.7.2",
+    "next": "^14.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.46.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^20.11.30",
+    "@types/qs": "^6.9.11",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^8.57.0",
+    "eslint-config-base": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup": "8.0.1",
+    "typescript": "^5.5.3"
+  }
+}

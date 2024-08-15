@@ -1,0 +1,69 @@
+{
+  "name": "@monorepo-starter/common",
+  "version": "0.1.0",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    },
+    "./envConfig": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/envConfig.js",
+      "default": "./dist/envConfig.js"
+    },
+    "./dist/": "./dist/"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "dotenvx run -- tsup --watch",
+    "build:types": "dotenvx run -- tsc --emitDeclarationOnly --declaration",
+    "build": "pnpm run build:types && dotenvx run -- tsup",
+    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --quiet --fix || true",
+    "prepublishOnly": "npm run build",
+    "test": "jest ./src",
+    "test:watch": "jest --watchAll ./src"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "dependencies": {
+    "@hookform/resolvers": "^3.2.0",
+    "clsx": "^2.1.1",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.51.1",
+    "axios": "^1.7.2",
+    "react": "^18.2.0",
+    "react-hook-form": "^7.46.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.5.0",
+    "@iconify/json": "^2.2.196",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "esbuild": "^0.23.0",
+    "esbuild-plugin-react18": "^0.2.5",
+    "eslint": "^8.57.0",
+    "eslint-config-base": "workspace:*",
+    "postcss": "^8.4.30",
+    "tsconfig": "workspace:*",
+    "tsup": "8.0.1",
+    "typescript": "^5.5.3",
+    "unplugin-icons": "^0.18.5"
+  }
+}

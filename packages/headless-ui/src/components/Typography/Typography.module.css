@@ -1,0 +1,19 @@
+.text {
+  display: block;
+  color: inherit;
+  word-wrap: break-word;
+  text-align: left;
+  white-space: pre-wrap;
+
+  &_align-right {
+    text-align: right;
+  }
+
+  &_align-center {
+    text-align: center;
+  }
+
+  &_inline {
+    display: inline-flex;
+  }
+}
