@@ -19,7 +19,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup --watch",
     "build": "tsup",
-    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --quiet --fix || true",
+    "lint": "biome check --write ./src --log-level none",
     "prepublishOnly": "npm run build"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
@@ -39,13 +39,12 @@
     "react-hook-form": "^7.46.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@types/lodash": "^4.14.199",
     "@types/node": "^20.11.30",
     "@types/qs": "^6.9.11",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "eslint": "^8.57.0",
-    "eslint-config-base": "workspace:*",
     "tsconfig": "workspace:*",
     "tsup": "8.0.1",
     "typescript": "^5.5.3"

@@ -1,5 +1,5 @@
-import { HTMLAttributes } from 'react';
 import cx from 'clsx';
+import { HTMLAttributes } from 'react';
 
 import classes from './Typography.module.css';
 

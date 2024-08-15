@@ -6,7 +6,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
     "dev": "next dev --turbo",
     "build": "next build && mkdir -p .next/standalone/apps/constructor/.next/static && cp -r .next/static .next/standalone/apps/constructor/.next",
-    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --quiet --fix || true",
+    "lint": "biome check --write ./src --log-level none",
     "prepublishOnly": "npm run build",
     "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js ./src",
     "test:watch": "jest --watchAll ./src"
@@ -40,12 +40,11 @@
     "typescript-cookie": "^1.0.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@types/node": "^20.11.30",
     "@types/qs": "^6.9.11",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "eslint": "^8.57.0",
-    "eslint-config-base": "0.0.0",
     "postcss": "^8.4.30",
     "tsconfig": "workspace:*",
     "typescript": "^5.5.3"

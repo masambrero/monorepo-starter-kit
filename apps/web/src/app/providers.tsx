@@ -1,9 +1,9 @@
 'use client';
 
 import {
+  QueryCache,
   QueryClient,
   QueryClientProvider,
-  QueryCache,
 } from '@tanstack/react-query';
 import { AxiosError, isAxiosError } from 'axios';
 
@@ -43,8 +43,6 @@ type ProvidersProps = {
 
 export const Providers = ({ children }: ProvidersProps) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };

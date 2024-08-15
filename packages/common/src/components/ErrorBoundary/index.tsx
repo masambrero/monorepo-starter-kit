@@ -24,7 +24,6 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
     console.error('Uncaught error:', error, errorInfo);
   }
 
-  // eslint-disable-next-line react/no-unused-class-component-methods
   clearError = () => {
     this.setState({ error: null });
   };

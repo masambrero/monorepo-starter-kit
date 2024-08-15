@@ -29,7 +29,7 @@
     "dev": "dotenvx run -- tsup --watch",
     "build:types": "dotenvx run -- tsc --emitDeclarationOnly --declaration",
     "build": "pnpm run build:types && dotenvx run -- tsup",
-    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --quiet --fix || true",
+    "lint": "biome check --write ./src --log-level none",
     "prepublishOnly": "npm run build",
     "test": "jest ./src",
     "test:watch": "jest --watchAll ./src"
@@ -48,6 +48,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@dotenvx/dotenvx": "^1.5.0",
     "@iconify/json": "^2.2.196",
     "@svgr/core": "^8.1.0",
@@ -58,8 +59,6 @@
     "@types/react-dom": "^18.2.18",
     "esbuild": "^0.23.0",
     "esbuild-plugin-react18": "^0.2.5",
-    "eslint": "^8.57.0",
-    "eslint-config-base": "workspace:*",
     "postcss": "^8.4.30",
     "tsconfig": "workspace:*",
     "tsup": "8.0.1",

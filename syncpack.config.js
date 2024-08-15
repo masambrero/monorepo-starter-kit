@@ -8,7 +8,7 @@ module.exports = {
     'local',
     'overrides',
   ],
-  filter: '^(?!(@monorepo-starter/|eslint-config-base)).*',
+  filter: '^(?!(@monorepo-starter)).*',
   indent: '  ',
   semverGroups: [],
   semverRange: '',
