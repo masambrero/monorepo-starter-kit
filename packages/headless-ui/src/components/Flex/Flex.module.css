@@ -1,0 +1,9 @@
+.flex {
+  display: flex;
+  position: relative;
+  column-gap: var(--flex-column-gap);
+  row-gap: var(--flex-row-gap);
+  justify-content: var(--flex-justify-content);
+  flex-direction: var(--flex-direction);
+  flex-wrap: var(--flex-wrap);
+}
